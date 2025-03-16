@@ -3,6 +3,7 @@ import { generateIdFromEntropySize } from "lucia";
 
 export default eventHandler(async (event) => {
 	const body = await readBody(event);
+	console.log(body)
 	const username = body.username;
 	if (
 		typeof username !== "string"
@@ -34,7 +35,9 @@ export default eventHandler(async (event) => {
 	// TODO: check if username is already used
     try {
         await pool.query("INSERT INTO auth_user(id, username, password_hash, name) VALUES($1, $2, $3, $4)", [userId, username, passwordHash, body.name])
-    } catch (error) {
+		const x = await pool.query("SELECT current_database()")
+		console.log(x.rows)
+	} catch (error) {
 		throw createError({
 			statusMessage: "Internal Server Error Occurred",
 			statusCode: 500

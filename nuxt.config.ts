@@ -8,8 +8,13 @@ export default defineNuxtConfig({
     githubClientSecret: '',
     githubClientId: '',
     googleClientSecret: '',
-    googleClientId: ''
+    googleClientId: '',
+    gemini: '',
+    appwrite: ''
   },
 
-  modules: ["@nuxtjs/tailwindcss"]
+  modules: ["@nuxtjs/tailwindcss", 'nuxt-cron'],
+  cron: {
+    runOnInit: true
+  }
 })

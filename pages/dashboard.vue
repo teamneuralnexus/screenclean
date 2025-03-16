@@ -13,10 +13,13 @@ async function logout() {
 }
 </script>
 
-<template>
+<!-- <template>
 	<h1>Hi, {{ user.name }}!</h1>
 	<p>Your user ID is {{ user.id }}.</p>
 	<form @submit.prevent="logout">
 		<button>Sign out</button>
 	</form>
+</template> -->
+<template>
+	<NuxtPage />
 </template>

@@ -18,6 +18,12 @@ async function signup(e) {
     error.value = err.statusMessage
   }
 }
+
+const user = useUser()
+const router = useRouter()
+if(user.value) {
+    router.push('/dashboard')
+}
 </script>
 <template>
     <div class="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600">

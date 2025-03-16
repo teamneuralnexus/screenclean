@@ -1,0 +1,2 @@
+IT IS A NUXT3 PROJECT USING TAILWINDCSS
+I am building a AI Resume Screener APP
